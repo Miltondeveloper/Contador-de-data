@@ -5,106 +5,136 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>21/08/2021</title>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(3, 3, 48);
+  }
 
-    
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url("imagens/freepik__expand__76232.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 10px;
-      text-align: center;
-      padding-top: 5vh;
-    }
+  video {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: -10px; /* vídeo mais acima */
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .contador {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tempo {
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    min-width: 70px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  #sempre, #teamo {
+    font-size: 1.2em;
+    margin: 15px 10px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  }
+
+  .icon-coracao {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 8px;
+    animation: pulsar 1s infinite;
+  }
+
+  .divisor {
+    border: none;
+    height: 2px;
+    margin: 30px auto;
+    width: 80%;
+    background: linear-gradient(to right, transparent, white, transparent);
+    opacity: 0.6;
+  }
+
+  .declarando {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    font-size: 1.1em;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .declarando div {
+    margin-bottom: 15px;
+  }
+
+  .heart {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    background-image:url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+    background-size: cover;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+    z-index: 1000;
+  }
+
+  @keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+  }
 
 
-    .contador {
-      
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 100%;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
 
+
+  @keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  @media (min-width: 600px) {
     h1 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
+      font-size: 2em;
     }
-
-    .tempo {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-
-    #sempre, #teamo {
-      font-size: 1.2em;
-      margin: 15px 10px;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-    }
-
-    .icon-coracao {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-      margin-left: 8px;
-      animation: pulsar 1s infinite;
-    }
-
-    @keyframes pulsar {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
+  }
+</style>
 
 
-    @media (min-width: 600px) {
-      
 
-      h1 {
-        font-size: 2em;
-      }
 
-      .tempo {
-        font-size: 1.2em;
-        padding: 10px;
-        min-width: 70px;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-
-      video {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        margin-bottom: 10px;
-        max-width: 100%;
-        height: auto;
-        margin-top: -20px; /* puxa o vídeo para cima */
-  
-      }
-
-    }
-  </style>
 </head>
+
+
 <body>
 
 
@@ -127,13 +157,29 @@
 </div>
 
 <h4 id="sempre">que o nosso pra sempre começou...</h4>
-<h4 id="teamo">
+
+
+<hr class="divisor">
+
+<div class="declarando">
+<div>Agradeço a Deus pelo melhor presente que ele ja me deu: você.</div>
+<div>Cada sorriso, cada abraço, cada beijo, foi tudo especial, foi tudo único. Especial, é a palavra certa para descrever você.</div>
+<div>Quero compartilhar todos os dias da minha vida ao teu lado. Sorrir, chorar, gritar, amar. Tudo que esse mundo tem para oferecer, eu quero viver junto a você.</div>
+<div>O meu sorriso é bem melhor contigo.</div>
+
+<h3 id="teamo">
   Te amo amor da minha vida
-  <img src="imagens/—Pngtree—3d red heart cute valentine_5315044.png" alt="coração" class="icon-coracao">
-</h4>
+  <img src="imagens/coracao.png" alt="coração" class="icon-coracao">
+</h3>
+</div>
+
 
 <script src="script.js">
 </script>
+
+<script src="script2.js">
+  </script>
+
 
 </body>
 </html>
